@@ -35,3 +35,9 @@ This repository contains a static HTML page and documents no build or deployment
 Keep changes scoped to the relevant scene, text, or styling in `index.html`. Preserve the filename and existing references unless a change requires updating them; when moving or adding an asset or changing a font, update the corresponding reference as well. In the handoff, summarize what changed and identify the affected page area or file.
 
 Before publishing, manually review the scene in a browser at narrow phone-sized and wide desktop-sized viewports. Try the existing orbit, zoom, and reset interactions, using pointer and touch input where available. This is a review checklist, not a report of completed compatibility testing or verified results.
+
+## Final release review
+
+- Open `index.html` from the published location and confirm the page loads as expected.
+- Test with network access available and keep a sensible fallback for externally loaded resources.
+- Review the published result once on a narrow screen and once on a wider screen; treat this as a release check, not an automated test report.

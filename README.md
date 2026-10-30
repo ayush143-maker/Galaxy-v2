@@ -1,19 +1,17 @@
 # Galaxy-v2
 
-An experimental interactive visualisation titled “Genesis”, with an orbit-style 3D scene and on-page guidance for dragging to orbit, scrolling to zoom, and double-tapping to reset.
+**Galaxy-v2** is an interactive space-themed visual experiment titled **Genesis**. It presents an orbit-style 3D scene and invites the viewer to explore it directly: drag to orbit, scroll to zoom, and double-tap to reset the view.
 
-## Run locally
+The project is designed as an immersive browser experience rather than a content-heavy website. Its main focus is the scene, the camera controls, and the atmosphere around the visualisation.
 
-Open index.html in a modern browser. If browser restrictions block local assets or APIs, serve the folder over HTTP.
+## Open locally
 
-## Structure and assets
+There is no package installation step in the current repository. Open index.html in a modern browser. If you prefer a local server, run:
 
-`index.html` is the primary entry point. Keep linked images, audio, scripts, and styles in their existing relative locations; renaming files may break references.
+    python -m http.server 8000
 
-## Preview and deployment
+Then visit http://localhost:8000.
 
-Open the page in a modern browser. If local-file behavior is restricted, start a simple HTTP server from this folder and open the local address in your browser. For static hosting, publish the correct root folder and check asset paths after deployment.
+## Interaction notes
 
-## Making changes
-
-Test the page after edits and check both phone-sized and desktop-sized viewports. Confirm that buttons and other visible interactions work in the deployed version as well as locally.
+Use a device with a modern browser and hardware capable of rendering the scene smoothly. When modifying the visualisation, preserve the existing touch and pointer controls and keep a clear way to return the camera to its starting position.

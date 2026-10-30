@@ -1,6 +1,6 @@
 # Galaxy-v2
 
-**Genesis** is an interactive, space-themed visual experiment featuring an orbit-style 3D scene. The experience is contained in the top-level `index.html`.
+**Genesis** is a procedural space-scene experiment that moves from a cinematic camera sequence into an interactive orbit view. The scene is rendered with Three.js and WebGL in the top-level `index.html`; stars and nebulae are generated in code rather than loaded as image assets.
 
 ## Preview locally
 
@@ -10,20 +10,16 @@ No package installation is required. Open `index.html` in a browser, or serve th
 python -m http.server 8000
 ```
 
-Then visit [http://localhost:8000](http://localhost:8000). No deployment configuration or build step is documented.
+Then visit [http://localhost:8000](http://localhost:8000). A browser with WebGL support is needed for the Three.js scene. There is no documented build step or deployment configuration.
 
-## Editing the experience
+## Experience and controls
 
-The page, scene, and styling are in `index.html`. The page links to Inter and Space Mono through Google Fonts. If changing typefaces, keep the font link and corresponding styling in sync. These font requests depend on network access; check that fallback typography remains legible when they are unavailable.
+A timed loading bar precedes a cinematic sequence of 20 camera shots, followed by the orbit view. The bar advances by timed random increments; it is not a measurement of scene or asset loading. Select **Skip** to move directly from the cinematic to interactive mode. Drag with one pointer to orbit, use the mouse wheel or a two-pointer pinch to zoom, and double-tap on touch to return the orbit camera to its preset values. After three seconds without orbit input, the interactive camera gradually rotates on its own.
 
-The repository root lists no separate image or asset directory. If adding assets, make their paths in `index.html` match their locations. For a static publication, serve the repository root and include the page and any referenced assets.
+The HUD shows distance and time values, while a progress rail tracks the cinematic and reaches 100% in interactive mode. There is an important control mismatch: after entering interactive mode, the button is labeled **Reset**, but its click handler calls the transition function that immediately returns in that mode. It does not reset the scene. The touch double-tap reset remains available.
 
-## Scene controls and review
+## Rendering and resources
 
-The experience includes orbit, zoom, and reset interactions. After editing, try these controls in a browser, using pointer and touch input where available. Review the scene at narrow phone-sized and wide desktop-sized viewports.
+The procedural scene contains 140,000 galaxy points, two nebula point clouds, a 16,000-point companion, and a 30,000-point starfield. It uses an EffectComposer render pass and UnrealBloomPass post-processing. These point counts and effects can be demanding on some devices; rendering performance depends on the visitor’s browser and hardware.
 
-## Repository map
-
-- `index.html` — page entry point, scene, styling, and font references.
-
-No package installation, build command, or deployment settings are documented for this static page.
+Three.js 0.160.0 and its post-processing modules load from unpkg through an import map. Inter and Space Mono load from Google Fonts. These CDN-hosted libraries and fonts require network access. The page makes no external API requests and does not save scene state or user settings in local storage. Edit the scene and styles in `index.html`; the repository root lists no separate image or asset directory.

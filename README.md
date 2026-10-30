@@ -10,10 +10,19 @@ No package installation is required. Open `index.html` in a browser, or serve th
 python -m http.server 8000
 ```
 
-Then visit http://localhost:8000. After visual changes, check that dragging orbits the scene, scrolling zooms, and double-tapping resets the view. Preserve the touch and pointer controls and a clear way to return the camera to its starting position. No deployment configuration is documented.
+Then visit http://localhost:8000. No deployment configuration is documented.
 
 ## Personalizing the experience
 
 The page and its orbit scene are in `index.html`; use that file to locate the existing visible text and scene styling before changing them. The document links to Inter and Space Mono through Google Fonts. If you change the typeface, update both the font link and the corresponding font styling together; otherwise, keep the existing link intact.
 
-The root file list contains no separate image or asset directory. If you add assets, place them intentionally and make the paths in `index.html` match their locations. After theme or scene edits, recheck dragging, scrolling, double-tap reset, and touch controls.
+The root file list contains no separate image or asset directory. If you add assets, place them intentionally and make the paths in `index.html` match their locations.
+
+## Manual review checklist
+
+These are review actions, not verified results.
+
+- Open the known entry page, `index.html`, in a browser, or visit `http://localhost:8000` after starting the local server above.
+- Try dragging to orbit the scene, scrolling to zoom, and double-tapping to reset the view. Check these controls with both pointer and touch input where available.
+- Inspect the scene at a narrow phone-sized viewport and a wide desktop-sized viewport. Check that the controls remain usable and the scene remains visible.
+- Check the Google Fonts link if typography was changed. If you added image or media assets, check that each reference in `index.html` matches its actual path.

@@ -41,3 +41,7 @@ Before publishing, manually review the scene in a browser at narrow phone-sized 
 - Open `index.html` from the published location and confirm the page loads as expected.
 - Test with network access available and keep a sensible fallback for externally loaded resources.
 - Review the published result once on a narrow screen and once on a wider screen; treat this as a release check, not an automated test report.
+
+## Repository map
+
+- `index.html` — HTML page entry point.

@@ -4,7 +4,7 @@
 
 ## Open and review locally
 
-No package installation is required. Open `index.html` in a modern browser, or serve the folder from the repository directory:
+No package installation is required. Open `index.html` in a browser, or serve the folder from the repository directory:
 
     python -m http.server 8000
 

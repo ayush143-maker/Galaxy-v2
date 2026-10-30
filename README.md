@@ -20,12 +20,14 @@ The root file list contains no separate image or asset directory. If you add ass
 
 ## Manual review checklist
 
-These are review actions, not verified results.
+These are review actions, not verified results or measured performance.
 
-- Open the known entry page, `index.html`, in a browser, or visit `http://localhost:8000` after starting the local server above.
+- Open `index.html` in a browser, or visit `http://localhost:8000` after starting the local server above.
 - Try dragging to orbit the scene, scrolling to zoom, and double-tapping to reset the view. Check these controls with both pointer and touch input where available.
 - Inspect the scene at a narrow phone-sized viewport and a wide desktop-sized viewport. Check that the controls remain usable and the scene remains visible.
-- Check the Google Fonts link if typography was changed. If you added image or media assets, check that each reference in `index.html` matches its actual path.
+- Check local image, audio, and font references against files that exist at the referenced paths. The root file list contains no separate image or asset directory.
+- Review any added media for appropriate dimensions and file size. Remove an asset only after confirming it is no longer referenced.
+- The page links to Inter and Space Mono through Google Fonts. Confirm that this external font dependency is intentional and that both fonts are used; keep the link and font styling aligned if typography changes. Review any external script references you add in the same way, and avoid dependencies that are not needed.
 
 ## Accessibility review checklist
 

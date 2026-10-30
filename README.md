@@ -18,6 +18,10 @@ The page and its orbit scene are in `index.html`; use that file to locate the ex
 
 The root file list contains no separate image or asset directory. If you add assets, place them intentionally and make the paths in `index.html` match their locations.
 
+## Configuration and data handling
+
+This repository contains a static `index.html`; no environment template or backend configuration is listed. Do not place credentials or private values in the page or other tracked files. Static-page values are sent to the browser and are not secret. Review page content and any assets you add before sharing or publishing them. The page links to Google Fonts, so visitors' browsers may also request those fonts from that external service.
+
 ## Browser and layout review checklist
 
 This is a checklist for future review, not a report of completed compatibility testing or verified results.

@@ -1,6 +1,6 @@
 # Galaxy-v2
 
-**Genesis** is an interactive, space-themed visual experiment featuring an orbit-style 3D scene. Drag to orbit, scroll to zoom, and double-tap to reset the view.
+**Genesis** is an interactive, space-themed visual experiment featuring an orbit-style 3D scene. Drag to orbit the scene, scroll to zoom, and double-tap to reset the view.
 
 ## Open locally
 

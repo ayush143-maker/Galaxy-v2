@@ -12,41 +12,14 @@ python -m http.server 8000
 
 Then visit http://localhost:8000. No deployment configuration is documented.
 
-## Personalizing the experience
+## Editing the experience
 
-The page and its orbit scene are in `index.html`; use that file to locate the existing visible text and scene styling before changing them. The document links to Inter and Space Mono through Google Fonts. If you change the typeface, update both the font link and the corresponding font styling together.
+The page, scene, and styling are in `index.html`. The document links to Inter and Space Mono through Google Fonts. If you change typefaces, keep the font link and the corresponding font styling in sync. The repository root lists no separate image or asset directory; if you add assets, make their paths in `index.html` match their locations.
 
-The root file list contains no separate image or asset directory. If you add assets, place them intentionally and make the paths in `index.html` match their locations.
+The page's font requests depend on network access to Google Fonts. If those requests are unavailable, check that the fallback typography remains legible.
 
-## Troubleshooting
+## Contributor handoff
 
-Use these as diagnostic steps, not as claims that the page currently has a problem:
+Keep changes scoped to the relevant scene, text, or styling in `index.html`. Preserve the filename and existing references unless a change requires updating them; when moving or adding an asset or changing a font, update the corresponding reference as well. In the handoff, summarize what changed and identify the affected page area or file.
 
-1. **Confirm the entry page.** Open the top-level `index.html`, or serve the repository directory and visit its root URL. Confirm the server is serving this project if the expected scene does not appear.
-2. **Check paths and local files.** Preserve relative paths when moving the page or adding assets. If a local asset request fails, confirm the file exists and that its reference in `index.html` matches its location. No separate image or asset directory is listed at the repository root.
-3. **Inspect browser diagnostics.** Check the console for errors on load and while using the scene. In the Network panel, inspect failed requests and their URLs to help identify local path or loading problems.
-4. **Separate network-dependent resources.** The page links Inter and Space Mono from Google Fonts. Those font requests require network access to the external service; they are distinct from local assets. If font requests fail, consider whether the page's fallback typography remains legible. Confirm any additional remote requests are intentional.
-
-## Configuration and data handling
-
-This repository contains a static `index.html`; no environment template or backend configuration is listed. Do not place credentials or private values in the page or other tracked files. Static-page values are sent to the browser and are not secret. Review page content and any assets you add before sharing or publishing them. The page links to Google Fonts, so visitors' browsers may also request those fonts from that external service.
-
-## Browser and layout review checklist
-
-This is a checklist for future review, not a report of completed compatibility testing or verified results.
-
-- Review the page in current versions of browsers relevant to the experience's intended audience.
-- Try dragging to orbit the scene, scrolling to zoom, and double-tapping to reset the view. Where available, try both pointer and touch input; do not assume one input mode verifies the other.
-- Inspect the scene at a narrow phone-sized viewport and a wide desktop-sized viewport. Check that the scene remains visible and controls remain usable without clipping or unwanted overflow.
-- Review the dimensions and file sizes of media you add. Remove an asset only after confirming it is no longer referenced.
-
-## Accessibility review checklist
-
-These are future checks, not verified results.
-
-- Try to reach and use the orbit, zoom, and reset interactions using only a keyboard. If an interaction is available only by dragging, scrolling, or double-tapping, consider whether an equivalent keyboard-operable control is needed.
-- Check that keyboard focus is visible on each interactive control and distinguishable against the scene and page background.
-- Review control names and instructions so they describe the action, such as orbit, zoom, or reset, rather than relying on an icon or gesture alone.
-- Check contrast for page text, instructions, and control labels against their backgrounds.
-- If the 3D scene conveys information beyond decoration, consider whether a concise text description is needed; check alternatives for any images added to the page.
-- Check the scene and related transitions with reduced motion requested. Consider a less animated presentation for nonessential movement.
+Before publishing, manually review the scene in a browser at narrow phone-sized and wide desktop-sized viewports. Try the existing orbit, zoom, and reset interactions, using pointer and touch input where available. This is a review checklist, not a report of completed compatibility testing or verified results.
